@@ -1,7 +1,7 @@
 project_template
 =====
 
-quick start for proejc based on Flask.
+quick start for project based on Flask.
 
 ### usage  
 ```shell
