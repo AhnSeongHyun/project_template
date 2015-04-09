@@ -1,11 +1,7 @@
-__author__ = 'sh.ahn'
-
 # -*- coding:utf-8 -*-
 __author__ = 'sh.ahn'
 
 from flask import Flask
-
-from commons.conf import Conf
 from flask import render_template
 from flask import request
 from flask import jsonify
