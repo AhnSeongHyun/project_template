@@ -31,10 +31,10 @@ class ProjectDB(object):
                 result = func(*args, **kwargs)
             except Exception as e:
 
-                print "Exception in user code:"
-                print '-'*60
+                print ("Exception in user code:")
+                print ('-'*60)
                 traceback.print_exc(file=sys.stdout)
-                print '-'*60
+                print ('-'*60)
                 raise e
 
 

@@ -3,6 +3,7 @@ project_template
 
 quick start for project based on Flask.
 
+
 ### usage  
 ```shell
 $ git clone https://github.com/AhnSeongHyun/project_template.git
@@ -19,5 +20,10 @@ what is project name? is"api_test".
 Rename project to  "api_test"...
 Complete. Enjoy Developing.
 ```
+
+### Python Version
+- support python 2.7
+- support python 3.4  
+
 ### License
 MIT License. See `LICENSE.md`

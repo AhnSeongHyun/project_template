@@ -8,15 +8,23 @@ if str.lower(platform.uname()[0]) == "windows":
     is_windows = True
 
 
-print "\nWelcome Project-Template."
-print "Start your Project"
+print ("\nWelcome Project-Template.")
+print ("Start your Project")
 
-project_name = str(raw_input('\nTyping project name :'))
-print "what is project name? is" + "\"" + project_name + "\"" + "."
+
+
+try:
+    input = raw_input
+except NameError:
+    pass
+
+
+project_name = str(input('\nTyping project name :'))
+print ("what is project name? is" + "\"" + project_name + "\"" + ".")
 
 project_path = "../" + project_name
 
-print "Rename project to  " +  "\"" + project_name + "\"" + "..."
+print ("Rename project to  " +  "\"" + project_name + "\"" + "...")
 current_dir = os.path.abspath("./")
 dest_dir = os.path.join(os.path.dirname(current_dir), project_name)
 shutil.move(current_dir, dest_dir)
@@ -53,4 +61,4 @@ for file_info in change_file_list:
     else:
         with open(file_info["filepath"], "w") as f:
             f.write(file)
-print "Complete. Enjoy Developing."
+print ("Complete. Enjoy Developing.")
