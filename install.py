@@ -24,8 +24,14 @@ print ("what is project name? is" + "\"" + project_name + "\"" + ".")
 
 project_path = "../" + project_name
 
+
 print ("Rename project to  " +  "\"" + project_name + "\"" + "...")
 current_dir = os.path.abspath("./")
+
+shutil.rmtree(os.path.join(current_dir, ".git"), True)
+os.remove(os.path.join(current_dir, ".gitignore"))
+
+
 dest_dir = os.path.join(os.path.dirname(current_dir), project_name)
 shutil.move(current_dir, dest_dir)
 
@@ -34,7 +40,6 @@ shutil.move("./project.conf", "./" + project_name +".conf")
 
 
 change_file_list = list()
-
 change_file_list.append({"filepath" : "./project_base.py", "is_remove" : True})
 change_file_list.append({"filepath" : "./views/project_view.py", "is_remove" : True})
 change_file_list.append({"filepath" : "./db/project_db.py", "is_remove" : True})
@@ -47,10 +52,10 @@ change_file_list.append({"filepath" : "./stop.sh", "is_remove" : False})
 
 for file_info in change_file_list:
 
-
     with open(file_info["filepath"], "r") as f:
         file = f.read()
     file = file.replace("project", project_name)
+    file = file.replace("Project", project_name)
 
     if file_info["is_remove"]:
 
